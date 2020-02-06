@@ -1,0 +1,21 @@
+{% extends "base-short.html" %}
+
+{% block content %}
+    <body>
+        <div class="wrapper">
+            {% include "components/navbar.html" %}
+            <article>
+                <h2>Dein Profil</h2>
+                <p>Dies ist deine Profil-Seite, {{ user.username }}</p>
+                <ul>
+                    <li>Dein Vorname lautet: {{ user.name }}</li>
+                    <li>Dein Username lautet: {{ user.username }}</li>
+                    <li>Deine E-Mail lautet: {{ user.email }}</li>
+                </ul>
+                <p><a href="/profile/edit">Profil bearbeiten</a> </p>
+            </article>
+        {% include "components/footer.html" %}
+        </div>
+
+    </body>
+{% endblock content %}

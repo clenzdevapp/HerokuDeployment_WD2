@@ -1,0 +1,33 @@
+{% extends "base-short.html" %}
+
+{% block content %}
+    <body>
+        <div class="wrapper">
+            {% include "components/navbar.html" %}
+            <article>
+                <h2>Dein Profil</h2>
+                <p>Dies ist deine Profil-Seite, {{ user.username }}</p>
+                <form class="profil-form" method="post">
+                    <p>
+                        <strong>Your name:</strong>
+                        <input type="text" value="{{ user.name }}" name="name">
+                    </p>
+
+                    <p>
+                        <strong>Your username:</strong>
+                        <input type="text" value="{{ user.username }}" name="username">
+                    </p>
+
+                    <p>
+                        <strong>Your email:</strong>
+                        <input type="email" value="{{ user.email }}" name="email">
+                    </p>
+
+                    <button type="submit">Speichern</button>
+                </form>
+            </article>
+        {% include "components/footer.html" %}
+        </div>
+
+    </body>
+{% endblock content %}
